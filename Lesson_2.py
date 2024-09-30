@@ -45,6 +45,9 @@ number4 = number_5d % 100 // 10
 # отримання п'ятої цифри 5-ти значного числа
 number5 = number_5d % 10
 
+# перевірка\перегляд розрахованих цифр (закоментовано)
+# print(number1, number2, number3, number4, number5, sep="\n" )
+
 # отримання цифр для "перевернутого" 5-ти значного числа
 number5_1 = number5 * 10000
 number4_2 = number4 * 1000
@@ -56,5 +59,5 @@ number = number5_1 + number4_2 + number3_3 + number2_4 + number1
 
 # друк "перевернутого" числа за допомогою функції формат (f)
 print(f"{number}\n")
-# print(number1, number2, number3, number4, number5, sep="\n" )
+
 
