@@ -7,7 +7,6 @@
 # введення чисел - визначення зміних (перший та другий операнд)
 number1 = int(input("Enter first number:"))
 number2 = int(input("Enter second number:"))
-
 # введення переліку математичних операцій
 print("\nCalculator")
 select_math_oper = int(input("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n"))
@@ -42,12 +41,10 @@ else:
 # введення чисел - визначення зміних (перший та другий операнд)
 number1 = int(input("Enter first number:"))
 number2 = int(input("Enter second number:"))
-
 # введення переліку математичних операцій
 print("\nCalculator")
 select_math_oper = int(input("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n"))
 print("\nSelect a mathematical operation:")
-
 #друк математичної операції та її результату в залежності від вибору
 match select_math_oper:
     case 1:
