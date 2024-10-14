@@ -45,7 +45,55 @@ for name_for_check in variable_names_for_check:
     else:
         print(f"Variable length '{name_for_check}' is not correct!")
 
+## ДЗ 5.2. Модифікувати калькулятор таким чином, щоб він працював доти, доки користувач цього хоче.
+# Тобто, потрібно робити запит до користувача на продовження роботи калькулятора після кожного обчислення
+# якщо користувач ввів yes (можна просто y), то нове обчислення, інакше - закінчення роботи.
+# Виконання 4-х математичних дій (+,-,*,/) з двома операндами ( +виконати перевірку другого операнда -
+# при діленні не повинен бути 0.
 
+# Виконуємо цикл while за умови позитивної відповіді - y
+user_answer = "y"
+while True:
+    user_answer = str(input("Enter 'y' for continue:")).strip().lower()
+    if user_answer != "y":
+        print("Thank you for using the calculator")
+        break
+    # введення чисел - визначення зміних (перший та другий операнд)
+
+    number1 = int(input("Enter first number:"))
+    number2 = int(input("Enter second number:"))
+    # введення переліку математичних операцій
+    print("\nCalculator")
+    select_math_oper = int(input("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n"))
+    print("\nSelect a mathematical operation:")
+    # друк математичної операції та її результату в залежності від вибору
+    if select_math_oper == 1:
+        print("Addition")
+        addition = number1 + number2
+        print("Result:", addition)
+    elif select_math_oper == 2:
+        print("Subtraction")
+        subtraction = number1 - number2
+        print("Result:", subtraction)
+    elif select_math_oper == 3:
+        print("Multiplication")
+        multiplication = number1 * number2
+        print("Result:", multiplication)
+    elif select_math_oper == 4:
+        # перевірка другого операнду - на 0 ділити не можна
+        if number2 != 0:
+            print("Division")
+            division = number1 / number2
+            print("Result:", division)
+        else:
+            print("You can't divide by 0")
+    else:
+        print("Invalid input")
+
+        user_answer = str(input("Enter 'y' for continue:")).strip().lower()
+        if user_answer != "y":
+            print("Thank you for using the calculator")
+            break
 
 
 
