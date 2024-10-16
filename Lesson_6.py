@@ -71,3 +71,24 @@ if   0 < input_time < 8640000:
 
 else:
     print("The number must be between 0 and 8640000")
+
+
+#ДЗ 6.3. Добуток чисел.
+# Перемножити всі цифри, введені користувачем цілого числа, поки воно не стане менше або дорівнювати 9.
+#Користувач вводить число з клавіатури.
+
+input_number = input("Enter a number (integer): ")
+
+# Перевірка чи введено число взагалі
+if input_number == "":
+    print("Please, enter a number (integer): ")
+else:
+# Перевірка чи введене ціле число меньше 9, у циклі поки число не є менше 9, премножуємо цифри отриманого числа
+    number = int(input_number)
+    while number > 9:
+        outcome = 1
+        for d in str(number):
+            outcome *= int(d)
+            number = outcome
+# друк результату перемножень
+    print(f"Result : {number}")
