@@ -40,3 +40,26 @@ def correct_sentence(sent1: str, sent2: str) -> str:
 # Використання
 print(correct_sentence("glad to see you","Have a nice day everyone"))
 print(correct_sentence("dear society.","have a safe day."))
+
+#ДЗ 7.3. Пошук підрядка
+# Функція second_index приймає як параметри 2 рядки. Необхідно знайти індекс
+# другого входження шуканого рядка у рядку для пошуку.
+# Input: Два рядки (String). Output: Int or None
+
+def second_index (line: str, subline:str) -> int:
+# шукаємо індекс першого входження за допомогою метода find
+    find_first = line.find(subline)
+# якщо першого входження нема, то None
+    if find_first == -1:
+        return None
+# шукаємо індекс другого входження, з позиції після першого входження
+    find_second = line.find(subline, find_first + len(subline))
+# якщо другого входження нема, то None
+    if find_second != -1:
+        return find_second
+    else: None
+
+# Застосовуєм
+print(second_index("hohoho","ho"))
+print(second_index("Hello all","ll"))
+print(second_index("Hello hello","lo"))
