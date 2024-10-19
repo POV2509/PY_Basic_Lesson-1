@@ -85,7 +85,6 @@ def common_elements() -> set:
 
 # Знаходимо спільні елементи двох множин за допомогою метода intersection
     common_set = multiple_of_3.intersection(multiple_of_5)
-
     return common_set
 
 #Використання
