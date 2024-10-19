@@ -63,3 +63,31 @@ def second_index (line: str, subline:str) -> int:
 print(second_index("hohoho","ho"))
 print(second_index("Hello all","ll"))
 print(second_index("Hello hello","lo"))
+
+
+#ДЗ 7.4. Пошук спільних елементів
+#Функція common_elements, яка згенерує два списки елементів з генераторного виразу (range)
+# для 100 елементів,за наступними правилом: один список з числами кратними 3,
+#інший з кратними числами 5.
+#За допомогою множин створіть набір з числами, які є в обох множинах (перетин).
+#Функція повинна повернути цю множину як результат своєї роботи.
+
+def common_elements() -> set:
+# Генеруємо множину чисел, кратних 3 з рандомного списку з 100 елементів
+    multiple_of_3 = {n for n in range(100) if n % 3 == 0}
+# Перегляд множини чисел, кратних 3 (для наочності)
+#print(multiple_of_3)
+
+# Генеруємо множину чисел, кратних 5 з рандомного списку з 100 елементів
+    multiple_of_5 = {n for n in range(100) if n % 5 == 0}
+# Перегляд множини чисел, кратних 3 (для наочності)
+#print(multiple_of_5)
+
+# Знаходимо спільні елементи двох множин за допомогою метода intersection
+    common_set = multiple_of_3.intersection(multiple_of_5)
+
+    return common_set
+
+#Використання
+print(common_elements())
+
