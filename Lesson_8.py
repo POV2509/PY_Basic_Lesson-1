@@ -27,3 +27,47 @@ def add_one(random_digits):
 result = add_one(random_digits)
 # Друкуємо результат
 print(f"Result: {result}")
+
+
+#   ДЗ 8.2. Паліандром
+# Написати функцію is_palindrome, яка перевірятиме, чи є рядок паліндромом.
+# Паліндромом - це такий рядок, який читається однаково зліва направо і зправа наліво
+# без урахування знаків пунктуації та розмірності букв.
+# Функція приймає на вхід рядок, та повертає булеве значення True або False
+
+# загружаємо бібліотеку, шоб використовувати string.punctuation
+import string
+
+def is_palindrome(line):
+# Видаляємо знаки пунктуації та пробіли, перетворюємо на нижній регістр
+    cleaned_line = ''.join(char.lower() for char in line if char not in string.punctuation and char != ' ')
+# Перевіряємо, чи дорівнює рядок своєму зворотному варіанту за допомогою зрізу
+    return cleaned_line == cleaned_line[::-1]
+# Перевірка
+print(is_palindrome("Hello, Word!"))
+print(is_palindrome("Я несу гусеня!"))
+print(is_palindrome("Was it a car or a cat I saw?"))
+
+
+# ДЗ 8.3. Унікальне число
+
+# написати функцію find_unique_value, яка приймає список із чисел,
+# знаходить серед них  унікальне число  та повертати його.
+# Унікальне число - це число, яке зустрічається в списку один раз.
+# Випадок, коли в одному списку буде кілька унікальних чисел, перевіряти не потрібно.
+
+# скористуємось генератором чисел
+# завантажуємо бібліотеку random для генерування випадкових чисел
+import random
+# створюємо функцію генерації списку з кількістю елементів 10 , у діапазоні від 0 до 10
+def generate_digits():
+   return [random.randint(0,10) for i in range(10)]
+# друкуємо отриманий список
+random_digits = generate_digits()
+# друкуємо рандомний список (для наочності)
+print(f"Випадковий список цифр: {random_digits}")
+
+def find_unique_value(random_digits):
+    return [digit for digit in random_digits if random_digits.count(digit) == 1]
+# друкуємо унікальні числа\унікальне число
+print(f"Унікальні(е) числа(о): {find_unique_value(random_digits)}")
