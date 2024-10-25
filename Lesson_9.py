@@ -43,3 +43,32 @@ print(text)
 words = ["one", "two", "three"]
 print(words)
 print(f"Рopularity of words in the text: {popular_words(text, words)}")
+
+
+# ДЗ 9.2. Різниця між числами
+# Є набір чисел (float або int).Потрібно знайти різницю між найбільшим і найменшим
+# елементом. Функція difference має вміти працювати з невизначеною кількістю
+# аргументів. Якщо аргументів немає, то функція повертає 0 (нуль).
+# Для округлення використовуйте функцію round(x, 2).
+# Вх. Дані: Змінна кількість аргументів як числа (int, float).
+# Вих. Дані: Різниця між максимумом і мінімумом як число (int, float).
+
+def difference(*args):
+    """
+    The difference between the numbers.
+    :param args:A variable number of arguments as numbers (int, float).
+    :return:Difference between maximum and minimum as number (int, float).
+    """
+    # перевіряємо чи є аргументи, якщо нема=> 0
+    if not args:
+        return print("Number of arguments: 0")
+    # визначаємо максимальне та мінімальне число
+    max_args = max(args)
+    min_args = min(args)
+    # знаходимо різницю між max та min та округлюємо результат до 2 знаків після запятой
+    return round(max_args - min_args, 2)
+
+print(f"Difference between max and min: {difference(1, 3, 11, 10.111, 99)}")
+print(f"Difference between max and min: {difference(1, 3, 11, 101.111, 99)}")
+print(f"Difference between max and min: {difference ()}")
+print(f"Difference between max and min: {difference(1.99999, 3, 11, 10.111, 99)}")
