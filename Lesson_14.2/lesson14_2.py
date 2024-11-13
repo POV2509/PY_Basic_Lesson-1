@@ -34,8 +34,11 @@ def main():
     group.add_student(st8)
     group.add_student(st9)
     group.add_student(st10)
-    group.add_student(st11)
+#  group.add_student(st11)
     print(group)
+
+    assert group.find_student("Garsia") == st10
+    assert group.find_student("Jobs") == st10
 
     # group.add_student(st3)
     # print(group)
